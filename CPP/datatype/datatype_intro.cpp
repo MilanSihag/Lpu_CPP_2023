@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 using namespace std;
 int main(){
     int x = 5;
@@ -28,4 +29,9 @@ int main(){
     int sumOfInputs = input_first + input_second;
     cout << "Sum is : " << sumOfInputs << endl;
 
+
+    string name;
+    cout << "Enter your name : ";
+    getline(cin,name);
+    cout << "Name is : " << name << endl;
 }
