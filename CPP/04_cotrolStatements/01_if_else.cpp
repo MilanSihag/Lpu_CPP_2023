@@ -11,9 +11,9 @@ int main(){
     // else{
     //     cout << "Number is negative" << endl;
     // }
-    int userInput=4;
+    int userInput;
     cout << "Enter a number : ";
-    // cin >> userInput;
+    cin >> userInput;
     if(userInput%2==0){
         cout << "Number is even" << endl;
     }
