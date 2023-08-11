@@ -10,15 +10,26 @@ int main(){
 //	cout<<"after changing : "<<arr[2]<<endl;
 
 
-	string arr[4]={"Mercury","Venus","Earth","Mars"};
-	int sizeArr=sizeof(arr)/sizeof(string);
-	cout<<sizeArr;
-
-//	for(int i=0;i<4;i++){
+//	string arr[4]={"Mercury","Venus","Earth","Mars"};
+//	int sizeArr=sizeof(arr)/sizeof(string);
+//	cout<<sizeArr;
+//
+//	for(int i=0;i<sizeArr;i++){
 //		cout<<i<<" : "<<arr[i]<<endl;
 //	}
 	/* below code doesn't work in dev c++
 	for(string i : arr){
 		cout<< i<<endl;
 	}    */
+	
+	//taking numbers from user and storing them in array
+	int arr[5];
+	for(int i=0;i<5;i++){
+		cout<<"Enter "<<i+1<<" number : ";
+		cin>> arr[i];
+	}
+	cout<<"The numbers are: "<<endl;
+	for(int i=0;i<5;i++){
+		cout<< arr[i]<<" ";
+	}
 }
