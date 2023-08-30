@@ -54,6 +54,9 @@ void display(Node* head){
 	}
 	cout<<"NULL"<<endl;
 }
+void deletion(){
+	
+}
 int main(){
 	Node* head = NULL;
 	insertionAtTail(head,1);
