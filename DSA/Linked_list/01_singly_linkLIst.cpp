@@ -67,6 +67,32 @@ void deletionAtHead(Node* &head){
 	delete toDelete;
 	
 }
+bool isCircular(Node* head){
+	Node* temp =head->next;
+	while(temp!=NULL && temp==head){
+		temp=temp->next;
+	}
+	if(temp==head) return true;
+	
+	return false;
+}
+bool floydDetectLoop(Node* head){
+	if(head==NULL){
+		return false;
+	}
+	Node* slow = head;
+	Node* fast = head;
+	while(slow!=NULL && fast!=NULL){
+		slow=slow->next;
+		fast=fast->next;
+		if(fast!=NULL)
+		fast=fast->next;
+		if(slow==fast){
+			return true;
+		}
+	}
+	return false;
+}
 int main(){
 	Node *head = NULL; //empty link list
 	insertAtTail(head,1);
@@ -80,4 +106,8 @@ int main(){
 //	display(head);
 	deletionAtHead(head);
 	display(head);
+	if(isCircular(head))
+	cout<<"yes"<<endl;
+	else cout<<"no"<<endl;
+	cout<<floydDetectLoop(head)<<endl;
 }
