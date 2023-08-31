@@ -54,14 +54,23 @@ void display(Node* head){
 	}
 	cout<<"NULL"<<endl;
 }
-void deletion(){
-	
+void deletion(Node* head,int val){
+	Node* temp=head;
+	while(temp->data!=val){
+		temp=temp->next;
+	}
+	temp->prev->next = temp->next;
+	temp->next->prev = temp->prev;
+	delete temp;
 }
 int main(){
 	Node* head = NULL;
 	insertionAtTail(head,1);
 	insertionAtTail(head,2);
 	insertionAtTail(head,3);
+	insertionAtHead(head,0);
 	display(head);
-	displayRev(head);
+	deletion(head,2);
+	display(head);
+//	displayRev(head);
 }
