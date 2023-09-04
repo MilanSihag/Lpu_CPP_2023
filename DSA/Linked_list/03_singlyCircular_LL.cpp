@@ -11,7 +11,7 @@ class Node{
 		next=NULL;
 	}
 };
-void insertTail(Node* head,int val){
+void insertTail(Node* &head,int val){
 	Node* n = new Node(val);
 	if(head==NULL){
 		head=n;
@@ -28,7 +28,7 @@ void insertTail(Node* head,int val){
 	temp->next=n;
 	n->next=head;
 }
-void insertionAtHead(Node* head,int val){
+void insertionAtHead(Node* &head,int val){
 	Node* n= new Node(val);
 	if(head==NULL){
 		head=n;
@@ -47,7 +47,7 @@ void insertionAtHead(Node* head,int val){
 	n->next=head;
 	head=n;
 }
-void deletion(Node* head,int val){
+void deletion(Node* &head,int val){
 	Node* temp=head;
 	if(head==NULL){
 		return;
@@ -61,7 +61,9 @@ void deletion(Node* head,int val){
 }
 void display(Node* head){
 	Node* temp=head;
-	while(temp->next!=head){
+	cout<<temp->data<<"->";
+	temp=temp->next;
+	while(temp!=head){
 		cout<<temp->data<<"->";
 		temp=temp->next;
 	}
@@ -129,6 +131,6 @@ int main(){
 	insertTail(head,3);
 //	insertionAtHead(head,4);
 	display(head);
-	cout<<isCircular(head);
+//	cout<<isCircular(head);
 
 }
