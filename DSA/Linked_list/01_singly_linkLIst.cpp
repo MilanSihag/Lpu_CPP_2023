@@ -93,6 +93,17 @@ bool floydDetectLoop(Node* head){
 	}
 	return false;
 }
+Node* reverse(Node* &head){
+	Node* prev=NULL,curr=head,next;
+	while(curr!=NULL){
+		next=curr->next;
+		curr->next=prev;
+		
+		prev=curr;
+		curr=next;
+	}
+	return prev; //new head
+}
 int main(){
 	Node *head = NULL; //empty link list
 	insertAtTail(head,1);
@@ -110,4 +121,6 @@ int main(){
 	cout<<"yes"<<endl;
 	else cout<<"no"<<endl;
 	cout<<floydDetectLoop(head)<<endl;
+	Node* newhead=reverse(head);
+	display(newhead);
 }
