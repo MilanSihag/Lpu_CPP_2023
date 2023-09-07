@@ -94,7 +94,9 @@ bool floydDetectLoop(Node* head){
 	return false;
 }
 Node* reverse(Node* &head){
-	Node* prev=NULL,curr=head,next;
+	Node* prev=NULL;
+	Node* curr=head;
+	Node* next;
 	while(curr!=NULL){
 		next=curr->next;
 		curr->next=prev;
@@ -104,23 +106,43 @@ Node* reverse(Node* &head){
 	}
 	return prev; //new head
 }
+Node* kReverse(Node* head,int k){
+	Node* prev=NULL;
+	Node* curr=head;
+	Node* next=NULL;
+	int count=0;
+	while(curr!=NULL && count<k){
+		next=curr->next;
+		curr->next=prev;
+		prev=curr;
+		curr=next;
+		count++;
+	}
+	if(next!=NULL){
+		head->next=kReverse(next,k);
+	}
+	return prev;
+}
 int main(){
 	Node *head = NULL; //empty link list
 	insertAtTail(head,1);
 	insertAtTail(head,2);
 	insertAtTail(head,3);
+	insertAtTail(head,4);
 	insertAtHead(head,10);
 	insertAtHead(head,20);
 	display(head);
 //	search(head,30);
 //	deletion(head,40);
 //	display(head);
-	deletionAtHead(head);
+//	deletionAtHead(head);
+//	display(head);
+//	if(isCircular(head))
+//	cout<<"yes"<<endl;
+//	else cout<<"no"<<endl;
+//	cout<<floydDetectLoop(head)<<endl;
+//	Node* newhead=reverse(head);
+//	display(newhead);
+	kReverse(head,2);
 	display(head);
-	if(isCircular(head))
-	cout<<"yes"<<endl;
-	else cout<<"no"<<endl;
-	cout<<floydDetectLoop(head)<<endl;
-	Node* newhead=reverse(head);
-	display(newhead);
 }
