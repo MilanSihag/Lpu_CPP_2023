@@ -140,7 +140,7 @@ int main(){
 	insertTail(head,1);
 	insertTail(head,2);
 	insertTail(head,3);
-//	insertionAtHead(head,4);
+	insertionAtHead(head,4);
 	display(head);
 //	cout<<isCircular(head);
 

@@ -96,13 +96,13 @@ bool floydDetectLoop(Node* head){
 Node* reverse(Node* &head){
 	Node* prev=NULL;
 	Node* curr=head;
-	Node* next;
+	Node* n;
 	while(curr!=NULL){
-		next=curr->next;
+		n=curr->next;
 		curr->next=prev;
 		
 		prev=curr;
-		curr=next;
+		curr=n;
 	}
 	return prev; //new head
 }
