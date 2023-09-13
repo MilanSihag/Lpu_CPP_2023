@@ -17,6 +17,10 @@ class Count{
 			cout<<"count: "<<value<<endl;
 		}
 };
+//rules for operator overloading:-
+// - atleast one of the operand must be a user defined class object
+// - we can only overload existing operators
+// - some operators cannot be overloaded like ?:, ::, ., ->,
 int main(){
 	Count c1;
 	++c1;
