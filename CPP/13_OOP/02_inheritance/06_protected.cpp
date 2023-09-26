@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 //protected -: like private members, protected members are inaccessible outside the class, however,
-//   they can be accessed derived class, friend classes/functions.
+//   they can be accessed in derived class, friend classes/functions.
 //We need protected members if we want to hide the data of class, but still want that data to be
 //inherited by its derived class
 class Animal{
