@@ -12,6 +12,7 @@ class Node{
 class Queue{
 	Node* front;
 	Node* back;
+	public:
 	Queue(){
 		front=NULL;
 		back=NULL;
