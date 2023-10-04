@@ -2,7 +2,7 @@
 using namespace std;
 class Base{
 	public:
-		virtual void print(){
+		void print(){
 			cout<<"From base"<<endl;
 		}
 };
