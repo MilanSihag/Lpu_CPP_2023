@@ -30,6 +30,12 @@ void inOrder(Node* root){
 	cout<<root->data<<" ";
 	inOrder(root->right);
 }
+bool check(Node* root,int val){
+	if(root->data==val) return true;
+	else if(root==NULL) return false;
+	if(val<root->data) check(root->left,val);
+	else check(root->right,val);
+}
 int main(){
 	Node* root = NULL;
 	root = insertBST(root,5);
@@ -39,4 +45,7 @@ int main(){
 	insertBST(root,2);
 	insertBST(root,7);
 	inOrder(root);
+	cout<<endl;
+	if(check(root,4)) cout<<"yes"<<endl;
+	else cout<<"No"<<endl;
 }
