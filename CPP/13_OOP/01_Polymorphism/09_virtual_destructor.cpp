@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//there is no such thing as virtual constructor
 class Base{
 	public:
 		Base(){
