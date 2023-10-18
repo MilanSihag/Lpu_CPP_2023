@@ -33,3 +33,24 @@ this function cannot take any parameter.
 	int a = num;
 	cout<<a<<endl;
 }
+/*
+								EXAMPLE
+#include <iostream>
+using namespace std;
+
+class Distance {
+public:
+    int meters;
+    Distance(int m) : meters(m) {}
+    operator int() {
+        return meters + 78;
+    }
+};
+
+int main() {
+    Distance d(500);
+    int result = d;
+    cout << result;
+    return 0;
+}
+*/
