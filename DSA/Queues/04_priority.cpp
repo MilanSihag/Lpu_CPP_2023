@@ -7,7 +7,7 @@ int main(){
 	priority_queue<int, vector<int>, greater <int>> pq; //min heap
 	pq.push(1);
 	pq.push(2);
-	pq.push(3);
+	pq.push(7);
 	pq.push(4);
 	cout<<pq.size()<<endl;
 	while(!pq.empty()){
