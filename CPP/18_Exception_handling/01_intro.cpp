@@ -44,14 +44,13 @@ int main(){
 	int a,b;
 	cout<<"Enter values of A and B: ";
 	cin>>a>>b;
-	cout<<a/b;
-//	try{
-//		if(b!=0){
-//			cout<<a/b<<endl;
-//		}
-//		else throw b;
-//	}
-//	catch(int e){
-//		cout<<"Division by zero: "<<e<<endl;
-//	}
+	try{
+		if(b!=0){
+			cout<<a/b<<endl;
+		}
+		else throw b;
+	}
+	catch(int e){
+		cout<<"Division by zero: "<<e<<endl;
+	}
 }
