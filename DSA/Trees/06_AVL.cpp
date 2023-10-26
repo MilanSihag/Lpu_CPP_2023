@@ -68,9 +68,15 @@ Node* insert(Node* node,int key){
 		node->left = leftRotate(node->left);
 		return rightRotate(node);
 	}
-	//LL
-	
+	//RR
+	if(balance<-1 && key>node->right->key){
+		return leftRotate(node);
+	}
 	//RL
+	if(balance<-1 && key<node->right->key){
+		node->right = rightRotate(node->right);
+		return leftRotate(node);
+	}
 }
 int main(){
 	
